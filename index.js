@@ -12,7 +12,7 @@ app.post('/asistencia', (req,res)=>{
     const {nombre, asistencia, adultos, ninos} = req.body;
     console.log(JSON.stringify(req.body))
     db.query(
-        `INSERT INTO asistencia ( 'nombre', 'adultos', 'ninos', 'asistencia') VALUES('${nombre}', '${adultos}','${ninos}', '${asistencia}')`,
+        `INSERT INTO asistencia ('nombre', 'adultos', 'ninos', 'asistencia') VALUES('${nombre}', '${adultos}','${ninos}', '${asistencia}')`,
         (err, results) => {
             if (err) return res.status(500).send({ err });
             return res.status(200).send({ results });
